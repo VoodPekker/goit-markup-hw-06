@@ -496,6 +496,7 @@ margin-right: 77px;
 
 .footer .container {
   display: flex;
+  justify-content: space-between;
 }
 
 .footer {
@@ -518,7 +519,7 @@ margin-right: 77px;
 .social {
   width: 208px;
   height: 80px;
-  margin-left: 120px;
+  margin-left: 40px;
 }
 
 .social-title {
@@ -557,7 +558,7 @@ margin-right: 77px;
   position: relative;
   width: 455px;
   height: 80px;
-  margin-left: 80px;
+  /* margin-left: 80px; */
 }
 
 .subscribe-title {
@@ -898,22 +899,23 @@ margin-right: 77px;
 
 .registration-form-checkbox:checked {
 }
+
 .check {
-  opacity: 0;
-  transition: 300ms;
+  opacity: 1;
+  transition: 250ms;
 }
 
 .uncheck {
-  opacity: 1;
-  transition: 300ms;
+  opacity: 0;
+  transition: 250ms;
 }
 
 .registration-form-checkbox:checked~.registration-form-check>.check {
-  opacity: 1;
+  opacity: 0;
 }
 
 .registration-form-checkbox:checked~.registration-form-check>.uncheck {
-  opacity: 0;
+  opacity: 1;
 }
 
 .registration-form-check {
