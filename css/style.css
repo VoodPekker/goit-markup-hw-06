@@ -13,6 +13,7 @@
 
   --anim-card: 500ms ease;
   --anim-modal: 300ms cubic-bezier(.47, .25, .79, .43);
+  --anim-form: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -261,8 +262,9 @@ margin-right: 77px;
   color: #FFFFFF;
   background-color: var(--color-primary-brand);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border: transparent;
 
-  transition-property: box-shadow;
+  transition-property: box-shadow, background-color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -551,7 +553,66 @@ margin-right: 77px;
 
 }
 
+.subscribe {
+  position: relative;
+  width: 455px;
+  height: 80px;
+  margin-left: 80px;
+}
 
+.subscribe-title {
+  font-size: 16px;
+  color: #FFFFFF;
+  line-height: 1.5;
+  margin-bottom: 16px;
+
+}
+
+.subscribe-input {
+  width: 260px;
+  height: 40px;
+  padding: 8px 16px;
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+
+  color: #FFFFFF;
+
+  background-color: inherit;
+}
+
+.subscribe-btn {
+  width: 165px;
+  height: 40px;
+  margin-left: 24px;
+
+  padding-right: 40px;
+
+  color: #FFFFFF;
+  background-color: var(--color-primary-brand);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border: transparent;
+
+  transition: box-shadow, background-color var(--anim-form);
+
+}
+
+.subscribe-btn:hover,
+.subscribe-btn:focus {
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+}
+
+.subscribe-btn:active {
+  background-color: #404BBF;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
+.subscribe-icon {
+  position: absolute;
+  bottom: 8px;
+  right: 24px;
+
+}
 
 
 
@@ -670,6 +731,10 @@ margin-right: 77px;
 }
 
 
+
+
+
+
 /* ________ MODAL ___________ */
 
 .backdrop {
@@ -701,10 +766,11 @@ margin-right: 77px;
   width: 400px;
   min-height: 570px;    
 
-  background-color: var(--color-light);
+  background-color: #FCFCFC;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
 
+  padding: 24px;
 }
 
 .modal-btn {
@@ -724,6 +790,157 @@ margin-right: 77px;
   position: absolute;
   top: 24px;
   right: 24px;
+
+  transition: var(--anim-form);
 }
 
+.modal-btn:active {
+  background-color: #404BBF;
+  fill: #FFFFFF;
+}
+
+
 .modal-icon {}
+
+.registration-form-main {
+  display: block;
+  margin-top: 48px;
+  text-align: center;
+  margin-bottom: 14px;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--color-dark);
+}
+
+.registration-form-field {
+  position: relative;
+  display: block;
+  margin-bottom: 14px;
+}
+
+.registration-form-label {
+  display: block;
+  margin-bottom: 4px;
+
+  line-height: 1.33;
+  letter-spacing: 0.04em;
+  color: var(--color-subtle-text);
+}
+
+.registration-form-input {
+  width: 100%;
+  height: 40px;
+  padding-left: 38px;
+
+  background-color: transparent;
+  border-radius: 4px;
+  outline: 1px solid transparent;
+  outline-offset: -1px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  transition: outline-color var(--anim-form);
+}
+
+.registration-form-input:focus {
+  outline-color: var(--color-primary-brand);
+}
+
+
+.registration-form-icon {
+  position: absolute;
+  bottom: 10px;
+  left: 16px;
+  fill: #2E2F42;
+  transition: fill var(--anim-form);
+}
+
+.registration-form-input:focus+.registration-form-icon {
+  fill: var(--color-primary-brand);
+}
+
+
+.registration-form-message {
+  width: 100%;
+  height: 120px;
+  padding: 8px 16px;
+  margin-bottom: 16px;
+
+  resize: none;
+
+  background-color: transparent;
+  border-radius: 4px;
+  outline: 1px solid transparent;
+  outline-offset: -1px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  transition: outline-color var(--anim-form);
+}
+
+.registration-form-message:focus {
+  outline-color: var(--color-primary-brand);
+}
+
+.registration-form-message::placeholder {
+  color: var(--color-subtle-text);
+}
+
+.registration-form-agreement {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  margin-bottom: 24px;
+}
+
+.registration-form-checkbox {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.registration-form-checkbox:checked {
+}
+.check {
+  opacity: 0;
+  transition: 300ms;
+}
+
+.uncheck {
+  opacity: 1;
+  transition: 300ms;
+}
+
+.registration-form-checkbox:checked~.registration-form-check>.check {
+  opacity: 1;
+}
+
+.registration-form-checkbox:checked~.registration-form-check>.uncheck {
+  opacity: 0;
+}
+
+.registration-form-check {
+}
+
+
+.registration-form-text {
+  user-select: none;
+  font-size: 12px;
+  line-height: 1.33;
+}
+
+.registration-form-text a {
+  text-decoration: underline;
+}
+
+.registration-form-link {
+  color: var(--color-primary-brand);
+}
+
+.registration-form-btn {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+  width: 169px;
+  height: 56px;
+
+  transition: var(--anim-form);
+}
