@@ -800,6 +800,11 @@ margin-right: 77px;
   fill: #FFFFFF;
 }
 
+.modal-btn:hover {
+  background-color: #404BBF;
+  fill: #FFFFFF;
+}
+
 
 .modal-icon {}
 
@@ -824,6 +829,9 @@ margin-right: 77px;
   display: block;
   margin-bottom: 4px;
 
+
+  font-weight: 400;
+  font-size: 12px;
   line-height: 1.33;
   letter-spacing: 0.04em;
   color: var(--color-subtle-text);
@@ -882,6 +890,10 @@ margin-right: 77px;
 
 .registration-form-message::placeholder {
   color: var(--color-subtle-text);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: 0.04em;
 }
 
 .registration-form-agreement {
